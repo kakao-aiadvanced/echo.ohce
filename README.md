@@ -1,1 +1,1 @@
-ai advanced 교육
+# ai advanced 교육
