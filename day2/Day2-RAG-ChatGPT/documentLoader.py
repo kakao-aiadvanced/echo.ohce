@@ -1,13 +1,8 @@
 import bs4
-from langchain import hub
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-from llmLoader import llm
 
 # Load, chunk and index the contents of the blog.
 
@@ -56,15 +51,3 @@ def getContext(query):
     return (retriever | format_docs).invoke(query)
 
 
-
-print(getContext("What is Task Decomposition?"))
-
-
-# rag_chain = (
-#         {"context": retriever | format_docs, "question": RunnablePassthrough()}
-#         | prompt
-#         | llm
-#         | StrOutputParser()
-# )
-# 
-# response = rag_chain.invoke("What is Task Decomposition?")
