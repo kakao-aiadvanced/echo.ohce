@@ -1,3 +1,5 @@
+import string
+
 from llmLoader import llm
 
 
@@ -12,12 +14,12 @@ def hallucinationChecker(answer, query):
     )
 
     # 모델에 질문을 전달하여 답변 받기
-    response = llm(question).content
+    response = llm(question).content.lower().strip().rstrip(string.punctuation)
 
     # 응답을 확인하여 할루시네이션 판단
-    if "hallucination" in response.lower():
+    if "hallucination" in response:
         return True  # 할루시네이션임
-    elif "accurate" in response.lower():
+    elif "accurate" in response:
         return False  # 할루시네이션이 아님
     else:
         return None  # 확실하지 않은 경우

@@ -1,3 +1,5 @@
+import string
+
 from llmLoader import llm
 
 
@@ -10,16 +12,16 @@ def relevanceChecker(context, query):
     )
 
     # 모델에 질문을 전달하여 답변 받기
-    response = llm(question).content
+    response = llm(question).content.lower().strip().rstrip(string.punctuation)
     
     print("aa")
     print(response)
     
     
     # 응답을 확인하여 관련성 판단
-    if "yes" in response.lower():
+    if "yes" in response:
         return True
-    elif "no" in response.lower():
+    elif "no" in response:
         return False
     else:
         return None  # 확실하지 않은 경우
