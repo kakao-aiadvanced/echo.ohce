@@ -1,7 +1,7 @@
 # ai advanced 교육
 
 
-|차수        | 링크 |       
+|차수        | 과제 링크 |       
 |-------------|-----|
 | 1    | https://colab.research.google.com/drive/1tXrW6flyrSfb8N47nzQb3WwQ-cgeodKW?usp=drive_link  | 
 | 2  | https://colab.research.google.com/drive/1rwTzRRa8QmuTUA9kgy8Y4-QnN5G_x-dn?usp=drive_link  | 
